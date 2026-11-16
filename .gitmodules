@@ -1,0 +1,4 @@
+[submodule "nixos"]
+	path = nixos
+	url = git@github.com:CoderKai9001/nix-flakes.git
+	branch = master

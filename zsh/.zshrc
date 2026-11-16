@@ -46,3 +46,8 @@ eval "$(dircolors -b)"
 # ---------- Aliases ----------
 alias ll='ls -lah --color=auto'
 alias ls='ls --color=auto'
+
+# ---------- zoxide (must be last) ----------
+# --cmd cd: `cd foo` jumps to the best match for "foo" (falls back to normal cd),
+# `cdi` picks interactively.
+eval "$(zoxide init zsh --cmd cd)"
