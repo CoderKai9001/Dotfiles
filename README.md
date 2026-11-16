@@ -2,7 +2,7 @@
 
 | Path | Lives at | How |
 |---|---|---|
-| `nixos/` | `~/nixos` | symlink (own git repo → github nix-flakes) |
+| `nixos/` | `~/nixos` | symlink (git submodule → CoderKai9001/nix-flakes) |
 | `zsh/.zshrc`, `zsh/.zshenv` | `~/` | symlink |
 | `tmux/.tmux.conf` | `~/` | symlink |
 | `git/.gitconfig` | `~/` | symlink |
@@ -14,7 +14,7 @@ Not stored here (installed by `install.sh`): oh-my-zsh, zsh plugins, tpm and tmu
 ## New machine
 
 ```sh
-git clone <this repo> ~/dotfiles && ~/dotfiles/install.sh
+git clone --recurse-submodules git@github.com:CoderKai9001/Dotfiles.git ~/dotfiles && ~/dotfiles/install.sh
 sudo nixos-rebuild switch --flake ~/nixos#nixos
 ```
 
