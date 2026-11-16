@@ -18,7 +18,7 @@ git clone --recurse-submodules git@github.com:CoderKai9001/Dotfiles.git ~/dotfil
 sudo nixos-rebuild switch --flake ~/nixos#nixos
 ```
 
-`hardware-configuration.nix` is machine-specific and read from `/etc/nixos/`.
+`nixos/hardware-configuration.nix` is machine-specific: on a new machine, replace it with that machine's `/etc/nixos/hardware-configuration.nix` before rebuilding.
 
 ## Saving noctalia settings
 
