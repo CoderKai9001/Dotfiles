@@ -47,6 +47,17 @@ eval "$(dircolors -b)"
 alias ll='ls -lah --color=auto'
 alias ls='ls --color=auto'
 
+# ---------- yazi ----------
+# `y` opens yazi; on quit (q) the shell cd's to the dir you were in.
+# Use Q to quit without changing directory.
+y() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  yazi "$@" --cwd-file="$tmp"
+  IFS= read -r -d '' cwd < "$tmp"
+  [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+  rm -f -- "$tmp"
+}
+
 # ---------- zoxide (must be last) ----------
 # --cmd cd: `cd foo` jumps to the best match for "foo" (falls back to normal cd),
 # `cdi` picks interactively.
